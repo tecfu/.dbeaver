@@ -77,7 +77,8 @@ Keyboard -> Applicatiion Shortcuts -> CTRL+ALT+D
 - Linux
 ```bash
 rm -rf ~/.local/share/DBeaverData
-rm -rf ~/*.workspace6 
+rm -rf ~/*workspace6 
+rm -rf ~/.eclipse
 ```
 
 ## License

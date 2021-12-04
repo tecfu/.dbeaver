@@ -16,7 +16,7 @@ imap <space><space> <C-O><leader>
 noremap <C-J> 10j
 " !important: Must edit native DBeaver key binding for `Find Next` in
 " Preferences > User Interface > Keys
-" I changed to Ctrl+N
+" I changed to Ctrl+N "When `In Windows`"
 noremap <C-K> 10k
 
 " Scroll ght/left 10 characters
