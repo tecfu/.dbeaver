@@ -1,3 +1,5 @@
+set gvimpath=${HOME}\Vim\vim82\gvim.exe
+
 " Made possible by: https://github.com/vrapper/vrapper
 " For installation instructions, see: https://github.com/dbeaver/dbeaver/issues/8219
 
@@ -6,13 +8,20 @@ map <space> <leader>
 imap <space><space> <C-O><leader>
 
 " Map ctrl+j, ctrl+k to down/up 10 lines
+
 " Scroll up/down 10 lines at a time shift+j,shift+k
-noremap <C-j> 10j
-noremap <C-k> 10k
+" !important: Must edit native DBeaver key binding for `Incremental Find`
+" Preferences > User Interface > Keys
+" I changed to Ctrl+F
+noremap <C-J> 10j
+" !important: Must edit native DBeaver key binding for `Find Next` in
+" Preferences > User Interface > Keys
+" I changed to Ctrl+N
+noremap <C-K> 10k
 
 " Scroll ght/left 10 characters
-noremap <C-l> 10l
-noremap <C-h> 10h
+noremap <C-l> 10l 
+noremap <C-h> 10h  
 
 " Remap home and end to "ctrl+;" and ";" in addition to default "1" and "$" 
 noremap <leader>a ^
@@ -36,3 +45,22 @@ noremap <leader>j <S-j>
 set clipboard=autoselectplus
 
 noremap <leader>p "+p
+
+"Overwrites man for word under cursor
+map <S-k> :tabnext<CR>
+"Overwrites join lines
+map <S-j> :tabprev<CR>
+
+"List of eclipseaction commands here: https://github.com/pellaton/eclipse-cheatsheet/blob/master/eclipse4.9/eclipse-shortcuts-win-4.9.pdf
+"vrapper documentation on commands:
+"http://vrapper.sourceforge.net/documentation/?topic=commandline_commands
+
+"Emulate vim-easymotion using https://github.com/tobiasmelcher/EclipseAceJump
+eclipseuiaction aceJumpChar ace.jump.CommandAnyChar
+nmap f :aceJumpChar<enter>
+
+eclipseuiaction aceJumpString ace.jump.Command
+nmap <S-c> :aceJumpString<enter>
+
+"Close tab with same mapping as vim
+" => change in preferences
