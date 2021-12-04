@@ -2,6 +2,14 @@
 
 DBeaver configuration files
 
+## NOTE:
+
+Dbeaver saves potentially sensitive information to exported preference files,
+including filepaths on your machine (which may contain your name). Be sure to
+remove those references or otherwise account for them if you fork this repo and
+update them.
+
+
 ## Installation
 
 
