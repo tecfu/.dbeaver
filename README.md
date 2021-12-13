@@ -13,6 +13,18 @@ update them.
 ## Installation
 
 
+### dbeaver.ini
+
+
+- Force DBeaver to use UTC as default timezone (i.e. Postgres)
+
+Append the following
+Linux: /usr/share/dbeaver-ce/dbeaver.ini
+```
+-Duser.timezone=UTC
+```
+
+
 ### Vrapper Plugin
 
 - Clone this repository into your home directory
