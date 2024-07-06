@@ -18,11 +18,16 @@ update them.
 
 - Force DBeaver to use UTC as default timezone (i.e. Postgres)
 
-Append the following
-Linux: /usr/share/dbeaver-ce/dbeaver.ini
+
+Append the following to dbeaver.ini:
 ```
 -Duser.timezone=UTC
 ```
+
+Linux: /usr/share/dbeaver-ce/dbeaver.ini
+MacOS: /Applications/DBeaver.app/Contents/Eclipse/dbeaver.ini
+Windows: C:\Program Files\DBeaver\dbeaver.ini
+
 
 
 ### Vrapper Plugin
