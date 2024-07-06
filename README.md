@@ -39,9 +39,8 @@ Windows: C:\Program Files\DBeaver\dbeaver.ini
 
   - Dbeaver > Help > Install New Software > Work with (input field)
   - Enter:
-    http://download.eclipse.org/mpc/releases/1.9.0
+    https://vrapper.sourceforge.net/update-site/stable/
   - Restart Dbeaver
-  - Dbeaver > Help > Eclipse Marketplace > Search > Vim > Install
 
   > See also:
   > https://github.com/dbeaver/dbeaver/issues/8219
@@ -65,7 +64,6 @@ Windows: C:\Program Files\DBeaver\dbeaver.ini
   - Select:
     Acejump for Eclipse
   - Restart Dbeaver
-  - Dbeaver > Help > Eclipse Marketplace > Search > Vim > Install
 
 
 ### Keymap
