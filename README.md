@@ -104,6 +104,29 @@ keeps typing `W` and `CTRL+T` behaves as before:
 > `SHIFT+W` to *Close* in Preferences > Keys. Not recommended - those fire in
 > insert mode too, so uppercase `W` can no longer be typed in the editor.
 
+### Command mode (`:`)
+
+Vrapper has a real Ex-style command line: press `:` in normal or visual mode, type
+a command, Enter. History works (`up`/`down`), Tab completes arguments, and the
+built-in subset is `:q[uit]` `:w[all]` `:e[dit]` `:noh` `:set` `:map` `:tabnext`
+`:tabnew` `:eclipseuiaction`. It is not full vim Ex, and a mapped command cannot
+receive arguments.
+
+`:Rename` comes from this line in `.vrapperrc`:
+
+```vim
+eclipseuiaction Rename org.jkiss.dbeaver.ui.editors.sql.rename
+```
+
+- `:Rename` Enter, or `<leader>R` in normal/visual mode, renames the script behind
+  the current tab: it opens DBeaver's Rename dialog, the same command DBeaver puts
+  on `CTRL+F2` in the SQL script editor. Nothing to unbind for it - `CTRL+F2`
+  still works, the `:` form is just the vim-style entry point.
+- Unlike vim's `:Rename newname` it cannot take the new name inline:
+  `eclipseuiaction` fires a command by id and passes no parameters, and vrapper's
+  `:command` replays a fixed string with no `<args>` substitution. The dialog is
+  the input step.
+
 ### Create keyboard shortcut to open DBeaver
 
 - Linux, XFCE

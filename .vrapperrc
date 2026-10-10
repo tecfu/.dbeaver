@@ -85,3 +85,9 @@ vnoremap <leader>t <Esc>:newTab<CR>
 " keep it reachable on <leader>W.
 noremap <leader>W W
 vnoremap <leader>W W
+
+" :Rename (: key, then Rename + Enter) opens DBeaver's Rename SQL Script dialog,
+" which renames the file behind the current tab - same command as native CTRL+F2.
+eclipseuiaction Rename org.jkiss.dbeaver.ui.editors.sql.rename
+noremap <leader>R :Rename<CR>
+vnoremap <leader>R <Esc>:Rename<CR>
