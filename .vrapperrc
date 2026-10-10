@@ -61,5 +61,27 @@ nmap f :aceJumpChar<enter>
 eclipseuiaction aceJumpString ace.jump.Command
 nmap <S-c> :aceJumpString<enter>
 
-"Close tab with same mapping as vim
-" => change in preferences
+" Tab control from normal/visual mode only (insert mode keeps typing normally).
+" eclipseuiaction <name> <command-id> registers an ex-command alias; vrapper runs it
+" asynchronously, so the workbench (not vrapper) opens/closes the tab.
+eclipseuiaction newTab org.jkiss.dbeaver.core.sql.editor.create
+eclipseuiaction closeTab org.eclipse.ui.file.close
+
+noremap <C-t> :newTab<CR>
+noremap <S-w> :closeTab<CR>
+vnoremap <C-t> <Esc>:newTab<CR>
+vnoremap <S-w> <Esc>:closeTab<CR>
+
+" !important for <C-t>: DBeaver binds CTRL+T to "Toggle results panel" in the
+" "DBeaver SQL Script" scope, and Eclipse resolves key bindings before Vrapper
+" sees the key, so the map above never fires while that binding exists.
+" Preferences > User Interface > Keys > select "Toggle results panel" >
+" DBeaver scheme / "DBeaver SQL Script" context > Unbind, Apply, restart DBeaver.
+" Until then <leader>t (space, t) does the same thing with no preference change.
+noremap <leader>t :newTab<CR>
+vnoremap <leader>t <Esc>:newTab<CR>
+
+" <S-w> replaces the vim W motion (next WORD) in normal/visual mode;
+" keep it reachable on <leader>W.
+noremap <leader>W W
+vnoremap <leader>W W
