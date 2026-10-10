@@ -1,4 +1,4 @@
-set gvimpath=${HOME}\Vim\vim82\gvim.exe
+set gvimpath=gvim
 
 " Made possible by: https://github.com/vrapper/vrapper
 " For installation instructions, see: https://github.com/dbeaver/dbeaver/issues/8219
@@ -33,7 +33,6 @@ vnoremap > >gv
 
 " Search for visually selected text by pressing // in visual mode
 vnoremap // y/<C-R>"<CR>
-
 
 " Split lines leader+k [This frees up <S-k> for tabnext
 noremap <leader>k i<CR><ESC>k
